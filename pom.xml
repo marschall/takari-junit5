@@ -3,15 +3,19 @@
   <modelVersion>4.0.0</modelVersion>
 
   <groupId>com.github.marschall</groupId>
-  <artifactId>takari-junit5</artifactId>
+  <artifactId>takari-junit5-parent</artifactId>
   <version>1.0.0-SNAPSHOT</version>
   <inceptionYear>2021</inceptionYear>
   <url>https://github.com/marschall/takari-junit5</url>
+  <packaging>pom</packaging>
 
-  <name>3rd Party Jandex Indexer for Maven</name>
-  <description>
-    Builds Jandex indices for 3rd party artifacts.
-  </description>
+  <name>Takari Junit5 Parent</name>
+  <description>JUnit 5 extensions for takari testing</description>
+
+  <modules>
+    <module>takari-junit5</module>
+    <module>takari-junit5-its</module>
+  </modules>
 
   <developers>
     <developer>
