@@ -46,13 +46,13 @@ import java.util.TreeSet;
 import org.codehaus.plexus.util.DirectoryScanner;
 import org.codehaus.plexus.util.FileUtils;
 import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.extension.BeforeTestExecutionCallback;
+import org.junit.jupiter.api.extension.BeforeEachCallback;
 import org.junit.jupiter.api.extension.ExtensionContext;
 
 /**
  * Junit5 test extenation to extract and assert test resources.
  */
-public class TestResources implements BeforeTestExecutionCallback {
+public class TestResources implements BeforeEachCallback {
 
   private final String projectsDir;
 
@@ -70,7 +70,7 @@ public class TestResources implements BeforeTestExecutionCallback {
   }
 
   @Override
-  public void beforeTestExecution(ExtensionContext context) throws Exception {
+  public void beforeEach(ExtensionContext context) {
     String methodName = context.getTestMethod()
       .map(Method::getName)
       .map(name -> name.replace('/', '_').replace('\\', '_'))

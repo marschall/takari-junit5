@@ -11,7 +11,7 @@ import java.lang.annotation.Target;
 import org.junit.jupiter.api.extension.ExtendWith;
 
 /**
- * Meta-annotation for Maven plugin tests, registers all necessary annotations.
+ * Meta-annotation for Maven plugin tests, registers all necessary extensions.
  */
 @Documented
 @Retention(RUNTIME)
