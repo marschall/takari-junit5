@@ -9,6 +9,7 @@ import org.junit.runner.RunWith;
 import io.takari.maven.testing.TestResources;
 import io.takari.maven.testing.executor.MavenExecution;
 import io.takari.maven.testing.executor.MavenExecutionResult;
+import io.takari.maven.testing.executor.MavenInstallations;
 import io.takari.maven.testing.executor.MavenRuntime;
 import io.takari.maven.testing.executor.MavenRuntime.MavenRuntimeBuilder;
 import io.takari.maven.testing.executor.MavenVersions;
@@ -16,6 +17,9 @@ import io.takari.maven.testing.executor.junit.MavenJUnitTestRunner;
 
 @RunWith(MavenJUnitTestRunner.class)
 @MavenVersions({"3.8.3", "3.8.4"})
+@MavenInstallations(
+        {"target/apache-maven-3.8.2",
+          "target/apache-maven-3.8.1"})
 public class EmptyMojoJunit4Test {
 
   @Rule
@@ -31,7 +35,7 @@ public class EmptyMojoJunit4Test {
 
   @Test
   public void empty() throws Exception {
-    File basedir = this.resources.getBasedir("empty");
+    File basedir = this.resources.getBasedir("simple");
     MavenExecution execution = this.mavenRuntime.forProject(basedir);
 
     MavenExecutionResult result = execution.execute("clean", "package");
