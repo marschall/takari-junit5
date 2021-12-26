@@ -293,6 +293,8 @@
     <project.reporting.outputEncoding>utf-8</project.reporting.outputEncoding>
     <project.build.sourceEncoding>utf-8</project.build.sourceEncoding>
     <tikari.version>3.0.0</tikari.version>
+    <maven.version>3.8.4</maven.version>
+    <maven.plugin.version>3.6.2</maven.plugin.version>
   </properties>
 
 </project>
