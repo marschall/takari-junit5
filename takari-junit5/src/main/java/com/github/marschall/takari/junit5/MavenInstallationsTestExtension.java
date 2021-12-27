@@ -13,7 +13,7 @@ import io.takari.maven.testing.executor.MavenRuntime.MavenRuntimeBuilder;
 /**
  * Provides {@link MavenRuntimeBuilder} objects based on {@link MavenInstallations}.
  */
-public final class MavenInstallationsTestExtension implements TestTemplateInvocationContextProvider {
+final class MavenInstallationsTestExtension implements TestTemplateInvocationContextProvider {
 
   @Override
   public boolean supportsTestTemplate(ExtensionContext context) {

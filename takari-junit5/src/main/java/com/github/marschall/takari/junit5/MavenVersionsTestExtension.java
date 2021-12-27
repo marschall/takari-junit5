@@ -17,7 +17,7 @@ import io.takari.maven.testing.executor.MavenVersions;
 /**
  * Provides {@link MavenRuntimeBuilder} objects based on {@link MavenVersions}.
  */
-public final class MavenVersionsTestExtension implements TestTemplateInvocationContextProvider {
+final class MavenVersionsTestExtension implements TestTemplateInvocationContextProvider {
 
   @Override
   public boolean supportsTestTemplate(ExtensionContext context) {

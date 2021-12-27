@@ -15,15 +15,15 @@ import io.takari.maven.testing.executor.MavenRuntime.MavenRuntimeBuilder;
  * Provides a {@link MavenRuntimeBuilder} based on {@code -Dmaven.home}
  * and optionally {@code -Dclassworlds.conf}.
  */
-public final class ForcedMavenRuntimeBuilderParameterResolver implements ParameterResolver {
+final class ForcedMavenRuntimeBuilderParameterResolver implements ParameterResolver {
 
-  public ForcedMavenRuntimeBuilderParameterResolver() {
+  ForcedMavenRuntimeBuilderParameterResolver() {
     super();
   }
 
   @Override
   public boolean supportsParameter(ParameterContext parameterContext, ExtensionContext extensionContext) {
-    return parameterContext.getParameter().getType() == MavenRuntimeBuilder.class
+    return (parameterContext.getParameter().getType() == MavenRuntimeBuilder.class)
         && MavenHomeUtils.isForced();
   }
 
@@ -34,7 +34,7 @@ public final class ForcedMavenRuntimeBuilderParameterResolver implements Paramet
     File forcedClassworldsConf = MavenInstallationUtils.getForcedClassworldsConf();
 
     if (forcedMavenHome != null) {
-      if (forcedMavenHome.isDirectory() || (forcedClassworldsConf != null && forcedClassworldsConf.isFile())) {
+      if (forcedMavenHome.isDirectory() || ((forcedClassworldsConf != null) && forcedClassworldsConf.isFile())) {
         return MavenRuntime.builder(forcedMavenHome, forcedClassworldsConf);
       }
     }
