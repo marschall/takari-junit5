@@ -2,8 +2,6 @@ package com.github.marschall.takari.junit5.its;
 
 import java.io.File;
 
-import org.junit.jupiter.api.Disabled;
-import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.RegisterExtension;
 
 import com.github.marschall.takari.junit5.MavenPluginTest;
@@ -11,13 +9,15 @@ import com.github.marschall.takari.junit5.TestResources;
 
 import io.takari.maven.testing.executor.MavenExecution;
 import io.takari.maven.testing.executor.MavenExecutionResult;
+import io.takari.maven.testing.executor.MavenInstallations;
 import io.takari.maven.testing.executor.MavenRuntime;
 import io.takari.maven.testing.executor.MavenRuntime.MavenRuntimeBuilder;
 import io.takari.maven.testing.executor.MavenVersions;
 
-@Disabled
-@MavenPluginTest
 @MavenVersions({"3.8.3", "3.8.4"})
+@MavenInstallations(
+        {"target/apache-maven-3.8.2",
+          "target/apache-maven-3.8.1"})
 class EmptyMojoJunit5Tests {
 
   @RegisterExtension
@@ -31,7 +31,7 @@ class EmptyMojoJunit5Tests {
             .build();
   }
 
-  @Test
+  @MavenPluginTest
   void empty() throws Exception {
     File basedir = this.resources.getBasedir("simple");
     MavenExecution execution = this.mavenRuntime.forProject(basedir);
