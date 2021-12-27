@@ -1,7 +1,7 @@
 JUnit 5 Support for Takari Maven Plugin Testing Framework
 =========================================================
 
-Adds JUnit 5 Support for [Takari Maven Plugin Testing Framework](https://github.com/takari/takari-plugin-testing-project).
+Adds JUnit 5 Support for [Takari Maven Plugin Testing Framework](https://github.com/takari/takari-plugin-testing-project) until [takari-plugin-testing-project#38](https://github.com/takari/takari-plugin-testing-project/pull/38) is merged.
 
 
 Unit testing
