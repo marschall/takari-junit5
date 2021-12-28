@@ -1,5 +1,6 @@
 package com.github.marschall.takari.junit5;
 
+import static java.lang.annotation.ElementType.ANNOTATION_TYPE;
 import static java.lang.annotation.ElementType.METHOD;
 import static java.lang.annotation.RetentionPolicy.RUNTIME;
 
@@ -16,7 +17,7 @@ import org.junit.jupiter.api.extension.ExtendWith;
  */
 @Documented
 @Retention(RUNTIME)
-@Target(METHOD)
+@Target({ANNOTATION_TYPE, METHOD})
 @TestTemplate
 @Inherited
 @ExtendWith({
